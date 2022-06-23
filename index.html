@@ -5,7 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Songster</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+          // By default, submit button is disabled
+          document.querySelector('#submit').disabled = false;
+
+          // Enable button only if there is text in the input field
+          document.querySelector('#artist').keyup = () => {
+              if (document.querySelector('#artist').value.length > 0)
+                  document.querySelector('#submit').disabled = false;
+              else
+                  document.querySelector('#submit').disabled = true;
+          };
+
+          document.querySelector('form').onsubmit = () => {
+
+              // Create new item for table
+              const tr = document.createElement('tr');
+              const td = document.createElement('td');
+              tr.td.innerHTML = document.querySelector('#artist').value;
+              tr.td.innerHTML = document.querySelector('#genre').value;
+              // add new row
+              document.querySelector('table').append(tr);
+              // Add new item to table
+              document.querySelector('#artist').append(td);
+              document.querySelector('#genre').append(td);
+
+              // Clear input field and disable button again
+              document.querySelector('#artist').value = '';
+              document.querySelector('#genre').value = '';
+              document.querySelector('#submit').disabled = true;
+
+              // Stop form from submitting
+              return false;
+          };
+
+      });
+  </script>
+
+
 </head>
 <body>
     <div class="sticky-top" id="StickyHeader">
@@ -22,9 +64,14 @@
           </nav>
     </div>
     <h1>My favorite Music</h1>
+    <form>
+      <input id="artist" autocomplete="off" autofocus="" placeholder="New Artist" type="text">
+      <input id="genre" autocomplete="off" autofocus="" placeholder="New genre" type="text">
+      <input id="submit" type="submit" disabled="">
+    </form>
+    <table width = 100%>
     
-
-
+    </table>
 
 
 
