@@ -9,42 +9,26 @@
     
     
     <script>
-      document.addEventListener('DOMContentLoaded', () => {
+      function addRow(tableID) {
 
-          // By default, submit button is disabled
-          document.querySelector('#submit').disabled = false;
+        var table = document.getElementById(tableID);
 
-          // Enable button only if there is text in the input field
-          document.querySelector('#artist').keyup = () => {
-              if (document.querySelector('#artist').value.length > 0)
-                  document.querySelector('#submit').disabled = false;
-              else
-                  document.querySelector('#submit').disabled = true;
-          };
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
 
-          document.querySelector('form').onsubmit = () => {
+        var cell1 = row.insertCell(0);
+        cell1.innerHTML = document.querySelector('#artist').value
+      
 
-              // Create new item for table
-              const tr = document.createElement('tr');
-              const td = document.createElement('td');
-              tr.td.innerHTML = document.querySelector('#artist').value;
-              tr.td.innerHTML = document.querySelector('#genre').value;
-              // add new row
-              document.querySelector('table').append(tr);
-              // Add new item to table
-              document.querySelector('#artist').append(td);
-              document.querySelector('#genre').append(td);
 
-              // Clear input field and disable button again
-              document.querySelector('#artist').value = '';
-              document.querySelector('#genre').value = '';
-              document.querySelector('#submit').disabled = true;
+        var cell2 = row.insertCell(1);
+        cell2.innerHTML = document.querySelector('#genre').value
 
-              // Stop form from submitting
-              return false;
-          };
+        document.querySelector(tableID).append(row);
 
-      });
+      }
+
+    
   </script>
 
 
@@ -64,13 +48,13 @@
           </nav>
     </div>
     <h1>My favorite Music</h1>
-    <form>
-      <input id="artist" autocomplete="off" autofocus="" placeholder="New Artist" type="text">
-      <input id="genre" autocomplete="off" autofocus="" placeholder="New genre" type="text">
-      <input id="submit" type="submit" disabled="">
-    </form>
-    <table width = 100%>
-    
+   
+    <table width="350px"  id="table">
+      <tr>
+        <td><input id="artist" autocomplete="off" autofocus="" placeholder="New Artist" type="text"></td>
+        <td><input id="genre" autocomplete="off" autofocus="" placeholder="New genre" type="text"></td>
+        <td><input id="submit" type="submit" onclick="addRow('table');"></td>
+      </tr>
     </table>
 
 
