@@ -23,7 +23,7 @@ function addRow(tableID) {
   cell3.innerHTML = copynode.outerHTML;
   
   row.id = "row " + i
-  document.querySelector(tableID).querySelector(tbody).append(row);
+  tbody.append(row);
   i++;
 }
 function deleteRow(deleteNode) {
