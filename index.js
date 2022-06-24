@@ -1,9 +1,9 @@
-var i = 0;
+var i = 1;
 
 function addRow(tableID) {
-
+  var tbody = document.getElementById(tableID).getElementsByTagName('tbody')[0];
   var table = document.getElementById(tableID);
-  var rowCount = table.rows.length;
+  var rowCount = tbody.rows.length;
   var row = table.insertRow(rowCount);
   //inserting values into table
   var cell1 = row.insertCell(0);
@@ -19,11 +19,11 @@ function addRow(tableID) {
   var copynode = document.querySelector("#delete").cloneNode();
   //set attribute for the new button delete in the row and passed this argument to use the delete 
   copynode.setAttribute("onclick","deleteRow(this)");
-  copynode.style.display = "block";
+  copynode.style.display = "inline-block";
   cell3.innerHTML = copynode.outerHTML;
   
-  row.id = "row" + i
-  document.querySelector(tableID).append(row);
+  row.id = "row " + i
+  document.querySelector(tableID).querySelector(tbody).append(row);
   i++;
 }
 function deleteRow(deleteNode) {

@@ -27,16 +27,21 @@
           </nav>
     </div>
     <h1>My favorite Music</h1>
-   
-    <table width="350px"  id="table">
-      <tr>
-        <td><input id="artist" autocomplete="off" autofocus="" placeholder="New Artist" type="text"></td>
-        <td><input id="genre" autocomplete="off" autofocus="" placeholder="New genre" type="text"></td>
-        <td><input id="submit" type="submit" onclick="addRow('table');"></td>
-        <td><input type="button" value="Delete" id ="delete"style="display:none"></td>
-      </tr>
-    </table>
-
+    
+    <div class = "container-fluid">
+      <table class="table" id="table">
+        <tr id="row 0">
+          <thead>
+            <th><input id="artist" autocomplete="off" autofocus="" placeholder="New Artist" type="text" ></th>
+            <th><input id="genre" autocomplete="off" autofocus="" placeholder="New genre" type="text"></th>
+            <th><input id="submit" class="btn btn-dark" type="submit" onclick="addRow('table');"></th>
+            <td><input type="button" class="btn btn-dark" value="Delete" id ="delete"style="display:none"></td>
+          </thead>
+        </tr> 
+        <tbody>
+        </tbody>
+      </table>
+    </div>
 
 
 

@@ -61,3 +61,10 @@ h1 {
     height: 600px;
     object-fit: cover;
 }
+
+input {
+    width: 100%;
+  }
+table {
+    border: 2px solid;
+  }
