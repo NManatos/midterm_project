@@ -11,3 +11,38 @@ h1 {
 #image1 {
     font-size: 50px;
 }
+
+.carousel-inner > .item > img {
+    min-width: 100%;
+    width: 100%;
+}
+
+#carousel-1 {
+    height: 800px;
+    width: 2000px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    background-position: center center;
+    background-size: cover;
+}
+
+#carousel-2 {
+    height: 800px;
+    width: 2000px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    background-position: center center;
+    background-size: cover;
+}
+
+#carousel-3 {
+    height: 800px;
+    width: 2000px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    background-position: center center;
+    background-size: cover;
+}
