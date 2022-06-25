@@ -68,11 +68,11 @@ function deleteRow(deleteNode) {
   document.addEventListener('DOMContentLoaded', () => {
     var localdata = JSON.parse(localStorage.getItem('database'));
     //local storage
-    console.log(localdata);
+    //console.log(localdata);
     if (localdata){
       localdata.forEach(element => {
         addRow(element.genre,element.artist);
-        console.log(element);
+        //console.log(element);
       });
     }
     // By default, submit button is disabled
