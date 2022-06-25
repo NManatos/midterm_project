@@ -137,7 +137,13 @@ td {
     margin-top: 20px;
     background-image: linear-gradient(white,teal );
 }
-/* .page-footer{
+a{
+    text-decoration: none;
     
-    
+}
+.button1{
+    color: rgba(0, 47, 255, 0.863);
+}
+/* .button1:hover{
+    color: lime;
 } */
